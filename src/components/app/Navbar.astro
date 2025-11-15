@@ -17,7 +17,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav
-  class="bg-white dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600"
+  class="bg-[hsl(var(--background))] border-b-2 border-[hsl(var(--border))] backdrop-blur-sm bg-opacity-90 sticky top-0 z-50"
 >
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 justify-between">
@@ -88,7 +88,7 @@ const currentPath = new URL(Astro.request.url).pathname;
           }
           <a
             href={config?.header.actionButton?.href}
-            class="hidden md:block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            class="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-lg hover:shadow-xl hover:bg-[hsl(var(--primary))]/90 hover:scale-105 h-10 px-6 py-2"
           >
             {config?.header.actionButton?.text}
           </a>
@@ -121,7 +121,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       <div class="flex items-center px-4">
         <a
           href={config?.header.actionButton?.href}
-          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-lg hover:shadow-xl hover:bg-[hsl(var(--primary))]/90 h-10 px-6 py-2"
         >
           {config?.header.actionButton?.text}
         </a>

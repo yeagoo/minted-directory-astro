@@ -1,0 +1,26 @@
+---
+// Astro wrapper for the React Button component
+import { Button } from "./button";
+
+interface Props {
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+  href?: string;
+  class?: string;
+}
+
+const { variant = "default", size = "default", href, class: className } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={className}>
+    <Button client:load variant={variant} size={size} className="w-full">
+      <slot />
+    </Button>
+  </a>
+) : (
+  <Button client:load variant={variant} size={size} className={className}>
+    <slot />
+  </Button>
+)}
+

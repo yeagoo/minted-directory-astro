@@ -6,7 +6,7 @@ const type = "small-horizontal";
 ---
 
 <a
-  class="relative flex items-center bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-3 rounded-lg"
+  class="relative flex items-center bg-[hsl(var(--card))] border-2 border-[hsl(var(--border))] hover:border-[hsl(var(--primary))] p-4 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 group"
   href={href}
 >
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }

@@ -139,7 +139,7 @@ export async function GET({ params }: Props) {
     },
   };
  
-  return new ImageResponse(html, {
+  return new ImageResponse(html as any, {
     width: 1200,
     height: 600,
     fonts: [

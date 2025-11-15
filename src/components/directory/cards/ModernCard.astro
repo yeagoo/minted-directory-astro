@@ -1,0 +1,14 @@
+---
+import ModernCardReact from "./ModernCard";
+
+const { myItem, href } = Astro.props;
+
+const processedItem = {
+  ...myItem,
+  ...myItem.data,
+  image: myItem.image?.src || myItem.image,
+};
+---
+
+<ModernCardReact client:load myItem={processedItem} href={href} />
+

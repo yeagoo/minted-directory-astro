@@ -39,7 +39,7 @@ const navigation = [
 ---
 
 <footer
-  class="border-t border-gray-200 dark:border-gray-600 font-display"
+  class="border-t-2 border-[hsl(var(--border))] bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--muted))] font-display"
   aria-labelledby="footer-heading"
 >
   <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -50,7 +50,7 @@ const navigation = [
         <div class="flex space-x-6">
           {
             socials.map((item, index) => (
-              <a href={item?.link} class="text-gray-400 hover:text-gray-500">
+              <a href={item?.link} class="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-all duration-300 hover:scale-110">
                 <span class="sr-only">{item}</span>
                 <Icon
                   name={
@@ -71,7 +71,7 @@ const navigation = [
           [...Array(2).keys()].map((count) => (
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                <h3 class="text-sm font-semibold text-[hsl(var(--muted-foreground))] tracking-wider uppercase">
                   {navigation[count].title}
                 </h3>
                 <ul role="list" class="mt-6 space-y-4">
@@ -79,7 +79,7 @@ const navigation = [
                     <li>
                       <a
                         href={item.link}
-                        class="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:dark:text-gray-400 hover:text-gray-900"
+                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 hover:underline underline-offset-4"
                       >
                         {item.title}
                       </a>
@@ -89,7 +89,7 @@ const navigation = [
               </div>
 
               <div class="mt-10 md:mt-0">
-                <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                <h3 class="text-sm font-semibold text-[hsl(var(--muted-foreground))] tracking-wider uppercase">
                   {navigation[count + 2].title}
                 </h3>
                 <ul role="list" class="mt-6 space-y-4">
@@ -97,7 +97,7 @@ const navigation = [
                     <li>
                       <a
                         href={item.link}
-                        class="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:dark:text-gray-400 hover:text-gray-900"
+                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 hover:underline underline-offset-4"
                       >
                         {item.title}
                       </a>
@@ -111,9 +111,9 @@ const navigation = [
       </div>
     </div>
     <div
-      class="mt-16 border-t border-gray-900/10 dark:border-gray-600 pt-8 sm:mt-20 lg:mt-24"
+      class="mt-16 border-t-2 border-[hsl(var(--border))] pt-8 sm:mt-20 lg:mt-24"
     >
-      <p class="text-xs leading-5 text-gray-500">
+      <p class="text-xs leading-5 text-[hsl(var(--muted-foreground))]">
         &copy; {new Date().getFullYear()}
         {config.general.title} All rights reserved.
       </p>
