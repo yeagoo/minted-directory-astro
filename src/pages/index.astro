@@ -1,0 +1,35 @@
+---
+import Landing from "@layouts/Landing.astro";
+import { getEntry, render } from "astro:content";
+import { Button } from "@/components/ui/shadcn/button";
+import { Badge } from "@/components/ui/shadcn/badge";
+
+const index = await getEntry("pages", "index");
+if (!index) throw new Error("Index page not found");
+const { Content } = await render(index);
+---
+
+<Landing title={index?.data?.title || "Home"}>
+  <!-- shadcn UI 演示入口 -->
+  <div class="mb-8 p-4 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))]">
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg font-semibold">shadcn UI 已集成</h2>
+          <Badge client:load variant="secondary">新功能</Badge>
+        </div>
+        <p class="text-sm text-[hsl(var(--muted-foreground))]">
+          体验现代化的 UI 组件库
+        </p>
+      </div>
+      <a href="/shadcn-demo">
+        <Button client:load variant="outline">
+          查看组件展示 →
+        </Button>
+      </a>
+    </div>
+  </div>
+
+  <Content />
+</Landing>
+

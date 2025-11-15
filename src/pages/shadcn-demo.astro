@@ -1,0 +1,222 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/shadcn/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/shadcn/card";
+import { Badge } from "@/components/ui/shadcn/badge";
+import { Input } from "@/components/ui/shadcn/input";
+import { Separator } from "@/components/ui/shadcn/separator";
+---
+
+<BaseLayout title="shadcn UI 组件展示">
+  <div class="max-w-7xl mx-auto p-8 space-y-12">
+    <!-- 标题 -->
+    <div class="text-center space-y-4">
+      <h1 class="text-5xl font-bold bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+        shadcn UI 组件展示
+      </h1>
+      <p class="text-xl text-[hsl(var(--muted-foreground))]">
+        体验现代化的 React UI 组件
+      </p>
+    </div>
+
+    <Separator client:load />
+
+    <!-- 按钮展示 -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">按钮组件 (Buttons)</h2>
+        <p class="text-[hsl(var(--muted-foreground))]">不同样式和尺寸的按钮 - 请悬停查看效果</p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-4">
+          <Button client:load variant="default">默认按钮</Button>
+          <Button client:load variant="secondary">次要按钮</Button>
+          <Button client:load variant="outline">轮廓按钮</Button>
+          <Button client:load variant="ghost">幽灵按钮</Button>
+          <Button client:load variant="destructive">危险按钮</Button>
+          <Button client:load variant="link">链接按钮</Button>
+        </div>
+        
+        <div class="flex flex-wrap gap-4 items-center">
+          <Button client:load size="sm">小号按钮</Button>
+          <Button client:load size="default">默认大小</Button>
+          <Button client:load size="lg">大号按钮</Button>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- 卡片展示 -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">卡片组件 (Cards)</h2>
+        <p class="text-[hsl(var(--muted-foreground))]">用于展示内容的卡片容器 - 请悬停第二张卡片查看动画</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card client:load>
+          <CardHeader>
+            <CardTitle>基础卡片</CardTitle>
+            <CardDescription>这是一个简单的卡片示例</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>卡片内容区域可以放置任何内容，如文本、图片、表单等。</p>
+          </CardContent>
+          <CardFooter>
+            <Button client:load variant="outline" className="w-full">查看详情</Button>
+          </CardFooter>
+        </Card>
+
+        <Card client:load className="hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <CardHeader>
+            <CardTitle>悬停效果卡片</CardTitle>
+            <CardDescription>鼠标悬停查看动画</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>这个卡片在悬停时会有缩放和阴影效果。尝试悬停在上面！</p>
+          </CardContent>
+        </Card>
+
+        <Card client:load className="border-[hsl(var(--primary))] border-2 bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-950 dark:to-blue-950">
+          <CardHeader>
+            <CardTitle>主题色卡片</CardTitle>
+            <CardDescription>使用主题色高亮</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>这个卡片使用了主题色边框和渐变背景。</p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- 徽章展示 -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">徽章组件 (Badges)</h2>
+        <p class="text-[hsl(var(--muted-foreground))]">用于标签、状态显示</p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-3">
+          <Badge client:load variant="default">默认徽章</Badge>
+          <Badge client:load variant="secondary">次要徽章</Badge>
+          <Badge client:load variant="outline">轮廓徽章</Badge>
+          <Badge client:load variant="destructive">危险徽章</Badge>
+        </div>
+        
+        <div class="flex flex-wrap gap-3">
+          <Badge client:load className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">渐变徽章</Badge>
+          <Badge client:load className="bg-gradient-to-r from-green-500 to-blue-500 text-white">🎉 带图标</Badge>
+          <Badge client:load className="text-lg px-4 py-2">大号徽章</Badge>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- 输入框展示 -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">输入框组件 (Input)</h2>
+        <p class="text-[hsl(var(--muted-foreground))]">统一样式的表单输入 - 点击输入框查看焦点效果</p>
+      </div>
+      
+      <div class="max-w-md space-y-4">
+        <Input client:load placeholder="默认输入框" />
+        <Input client:load type="email" placeholder="电子邮件地址" />
+        <Input client:load type="password" placeholder="密码" />
+        <Input client:load disabled placeholder="禁用状态" />
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- 综合示例 -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">综合示例</h2>
+        <p class="text-[hsl(var(--muted-foreground))]">组合使用多个组件</p>
+      </div>
+      
+      <Card client:load className="max-w-2xl mx-auto">
+        <CardHeader>
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <CardTitle>用户资料表单</CardTitle>
+              <CardDescription>完善您的个人信息</CardDescription>
+            </div>
+            <Badge client:load variant="secondary" className="text-green-600 border-green-600">✓ 已验证</Badge>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div class="space-y-2">
+            <label class="text-sm font-medium">用户名</label>
+            <Input client:load placeholder="输入您的用户名" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium">电子邮件</label>
+            <Input client:load type="email" placeholder="your@email.com" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium">个人简介</label>
+            <Input client:load placeholder="介绍一下自己..." />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium">技能标签</label>
+            <div class="flex gap-2 flex-wrap">
+              <Badge client:load>开发者</Badge>
+              <Badge client:load>设计师</Badge>
+              <Badge client:load variant="outline">产品经理</Badge>
+              <Button client:load variant="ghost" size="sm">+ 添加标签</Button>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button client:load variant="outline">取消</Button>
+          <Button client:load>保存更改</Button>
+        </CardFooter>
+      </Card>
+    </section>
+
+    <!-- 关键特性 -->
+    <section class="mt-16 p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-2 border-[hsl(var(--border))]">
+      <h2 class="text-3xl font-bold mb-6 text-center">shadcn UI 的优势</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center space-y-2">
+          <div class="text-4xl">✨</div>
+          <h3 class="font-bold">现代化设计</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">采用最新的设计趋势</p>
+        </div>
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🎭</div>
+          <h3 class="font-bold">流畅动画</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">平滑的悬停过渡</p>
+        </div>
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🌓</div>
+          <h3 class="font-bold">主题支持</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">完美暗色模式</p>
+        </div>
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🚀</div>
+          <h3 class="font-bold">易于使用</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">复制即用的组件</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 返回按钮 -->
+    <div class="flex justify-center gap-4 pt-8">
+      <a href="/">
+        <Button client:load variant="outline" size="lg">← 返回首页</Button>
+      </a>
+      <a href="/ui-comparison">
+        <Button client:load size="lg">查看对比 →</Button>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

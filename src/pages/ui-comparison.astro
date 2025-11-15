@@ -1,0 +1,190 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="UI 对比 - 传统 vs shadcn UI">
+  <div class="max-w-7xl mx-auto p-8 space-y-12">
+    <div class="text-center space-y-4">
+      <h1 class="text-5xl font-bold bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent">
+        UI 对比展示
+      </h1>
+      <p class="text-xl text-[hsl(var(--muted-foreground))]">
+        传统样式 vs shadcn UI 增强后的效果
+      </p>
+    </div>
+
+    <!-- 按钮对比 -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">按钮对比</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-red-600">❌ 传统按钮</h3>
+          <div class="space-y-4">
+            <button class="px-4 py-2 bg-blue-500 text-white rounded">
+              普通按钮
+            </button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded">
+              次要按钮
+            </button>
+            <button class="px-4 py-2 border border-gray-300 rounded">
+              轮廓按钮
+            </button>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-green-600">✅ shadcn UI 按钮</h3>
+          <div class="space-y-4">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-lg hover:shadow-xl hover:bg-[hsl(var(--primary))]/90 hover:scale-105 h-10 px-6 py-2">
+              现代化按钮
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] shadow-md hover:shadow-lg hover:bg-[hsl(var(--secondary))]/80 hover:scale-105 h-10 px-6 py-2">
+              次要按钮
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] disabled:pointer-events-none disabled:opacity-50 border-2 border-[hsl(var(--input))] bg-[hsl(var(--background))] shadow-sm hover:shadow-lg hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] hover:scale-105 h-10 px-6 py-2">
+              轮廓按钮
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-[hsl(var(--border))]" />
+
+    <!-- 卡片对比 -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">卡片对比</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-red-600">❌ 传统卡片</h3>
+          <div class="border border-gray-300 rounded p-4 bg-white dark:bg-gray-800">
+            <h4 class="text-lg font-bold mb-2">普通卡片</h4>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              这是一个传统的卡片样式，没有特殊效果。
+            </p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded">
+              查看详情
+            </button>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-green-600">✅ shadcn UI 卡片</h3>
+          <div class="rounded-xl border-2 border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-[hsl(var(--primary))] transition-all duration-300 overflow-hidden group">
+            <div class="p-6">
+              <h4 class="text-lg font-bold mb-2 group-hover:text-[hsl(var(--primary))] transition-colors">
+                现代化卡片
+              </h4>
+              <p class="text-[hsl(var(--muted-foreground))] mb-4">
+                这个卡片拥有流畅的悬停动画、阴影效果和现代化设计。
+              </p>
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-lg hover:shadow-xl hover:scale-105 h-9 px-4 py-2">
+                查看详情
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-[hsl(var(--border))]" />
+
+    <!-- 输入框对比 -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">输入框对比</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-red-600">❌ 传统输入框</h3>
+          <input 
+            type="text" 
+            placeholder="普通输入框"
+            class="w-full px-3 py-2 border border-gray-300 rounded"
+          />
+        </div>
+        
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-green-600">✅ shadcn UI 输入框</h3>
+          <input 
+            type="text" 
+            placeholder="现代化输入框"
+            class="flex h-12 w-full rounded-xl border-2 border-[hsl(var(--input))] bg-[hsl(var(--background))] px-3 py-1 text-base shadow-sm transition-all placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:border-[hsl(var(--primary))]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-[hsl(var(--border))]" />
+
+    <!-- 标签对比 -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">标签对比</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-red-600">❌ 传统标签</h3>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">标签1</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">标签2</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs">标签3</span>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-green-600">✅ shadcn UI 标签</h3>
+          <div class="flex gap-2">
+            <span class="inline-flex items-center rounded-lg border-2 border-[hsl(var(--border))] px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:scale-110 hover:shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
+              🎯 标签1
+            </span>
+            <span class="inline-flex items-center rounded-lg border-2 border-[hsl(var(--border))] px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:scale-110 hover:shadow-lg bg-gradient-to-r from-green-500 to-emerald-500 text-white">
+              ✨ 标签2
+            </span>
+            <span class="inline-flex items-center rounded-lg border-2 border-[hsl(var(--border))] px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:scale-110 hover:shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+              🚀 标签3
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关键特性 -->
+    <section class="mt-16 p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-2 border-[hsl(var(--border))]">
+      <h2 class="text-3xl font-bold mb-6 text-center">shadcn UI 的优势</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center space-y-2">
+          <div class="text-4xl">✨</div>
+          <h3 class="font-bold">现代化设计</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">采用最新的设计趋势和最佳实践</p>
+        </div>
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🎭</div>
+          <h3 class="font-bold">流畅动画</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">悬停、点击等交互都有平滑过渡</p>
+        </div>
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🌓</div>
+          <h3 class="font-bold">主题支持</h3>
+          <p class="text-sm text-[hsl(var(--muted-foreground))]">完美支持亮色和暗色模式</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center gap-4 pt-8">
+      <a href="/">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 border-2 border-[hsl(var(--input))] bg-[hsl(var(--background))] shadow-sm hover:shadow-lg hover:bg-[hsl(var(--accent))] hover:scale-105 h-10 px-6 py-2">
+          ← 返回首页
+        </button>
+      </a>
+      <a href="/shadcn-demo">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-lg hover:shadow-xl hover:scale-105 h-10 px-6 py-2">
+          查看完整组件 →
+        </button>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+

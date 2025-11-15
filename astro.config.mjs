@@ -19,6 +19,7 @@ export default defineConfig({
     sitemap()
   ],
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss(), ViteToml()]
   },
   env: {

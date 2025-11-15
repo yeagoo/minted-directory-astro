@@ -39,7 +39,7 @@ const navigation = [
 ---
 
 <footer
-  class="border-t-2 border-[hsl(var(--border))] bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--muted))] font-display"
+  class="border-t border-[hsl(var(--border))] bg-[hsl(var(--background))] font-display"
   aria-labelledby="footer-heading"
 >
   <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -50,7 +50,7 @@ const navigation = [
         <div class="flex space-x-6">
           {
             socials.map((item, index) => (
-              <a href={item?.link} class="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-all duration-300 hover:scale-110">
+              <a href={item?.link} class="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors">
                 <span class="sr-only">{item}</span>
                 <Icon
                   name={
@@ -79,7 +79,7 @@ const navigation = [
                     <li>
                       <a
                         href={item.link}
-                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 hover:underline underline-offset-4"
+                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
                       >
                         {item.title}
                       </a>
@@ -97,7 +97,7 @@ const navigation = [
                     <li>
                       <a
                         href={item.link}
-                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 hover:underline underline-offset-4"
+                        class="text-sm leading-6 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
                       >
                         {item.title}
                       </a>
@@ -111,7 +111,7 @@ const navigation = [
       </div>
     </div>
     <div
-      class="mt-16 border-t-2 border-[hsl(var(--border))] pt-8 sm:mt-20 lg:mt-24"
+      class="mt-16 border-t border-[hsl(var(--border))] pt-8 sm:mt-20 lg:mt-24"
     >
       <p class="text-xs leading-5 text-[hsl(var(--muted-foreground))]">
         &copy; {new Date().getFullYear()}

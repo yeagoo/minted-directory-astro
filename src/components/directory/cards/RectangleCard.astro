@@ -6,23 +6,23 @@ const { myItem, href } = Astro.props;
 ---
 
 <a href={href}
-  class="block h-full overflow-hidden rounded-xl border-2 border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-[hsl(var(--primary))] relative group transition-all duration-300">
+  class="block h-full overflow-hidden rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] hover:shadow-md relative group transition-shadow duration-200">
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
   { myItem.image ? (
-    <div class="w-full h-48 overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-950 dark:to-primary-900">
-      <Image height={500} width={800} class="w-full h-48 rounded-t object-cover transition-transform duration-300 group-hover:scale-110"
+    <div class="w-full h-48 overflow-hidden bg-[hsl(var(--muted))]">
+      <Image height={500} width={800} class="w-full h-48 rounded-t object-cover"
         src={myItem.image} alt={myItem.title} />
     </div>
   ) : (
-    <div class="w-full h-48 px-2 text-center flex justify-center items-center rounded-t font-bold text-2xl bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-950 text-primary-700 dark:text-primary-300">
+    <div class="w-full h-48 px-2 text-center flex justify-center items-center rounded-t font-semibold text-lg bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))]">
       {myItem.title }
     </div>
   )}
   <div class="p-6">
-    <h3 class="m-0 text-xl font-semibold dark:text-gray-50 card-title group-hover:text-[hsl(var(--primary))] transition-colors">
+    <h3 class="m-0 text-lg font-semibold card-title">
       { myItem?.title }
     </h3>
-    <p class="line-clamp-4 mt-2 text-[hsl(var(--muted-foreground))] card-description">
+    <p class="line-clamp-3 mt-2 text-sm text-[hsl(var(--muted-foreground))] card-description">
       { myItem.description }
     </p>
     <div class="p-0 mt-4 flex flex-wrap gap-2">
